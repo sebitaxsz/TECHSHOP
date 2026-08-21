@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end; /* Alinea los elementos a la derecha */
+  align-items: center;       /* Centra los botones verticalmente para que queden alineados */
+  gap: 15px;                 /* Espacio base de separación entre los botones */
+  padding: 15px 20px;
+} 
+
+/* Estilos compartidos para los botones transparentes */
+.carritoButton, .productosButton, .panelButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+/* Espacio diferenciador: separamos un poco más el panel */
+.panelButton {
+  margin-left: 15px; 
+}
+
+.iniciarButton {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 16px; 
+  width: 80px;
+  height: 32px;
+  margin-left: 10px; 
+}
+
+.parrafoInicio {
+  background-color: aliceblue;
+}
+
+#catalogoButton {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 10px 10px;
+}
+
+.banner-principal {
+  width: 100%; /* Cambiado de 100vw a 100% para evitar scroll horizontal */
+  height: 400px;
+  margin-top: 20px; /* Espacio separador respecto al Navbar */
+  margin-bottom: 0;  /* Elimina cualquier espacio inferior para que pegue con el footer */
+  
+  background-image: url('/assets/images/fondocentral.avif');
+  background-size: cover;
+  background-position: center;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenido-banner {
+  color: #000000; 
+  padding: 20px;
+}
+
+.contenido-banner h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.contenido-banner p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Estructura general del Footer para ancho completo */
+.footer-principal {
+  width: 100%;
+  background-color: #111111; 
+  color: #ffffff;
+  padding-top: 40px;
+  margin-top: 0; /* Pone a cero el margen superior para que quede pegado a la imagen */
+}
+
+/* Contenedor interno en cuadrícula para las columnas */
+.footer-contenedor {
+  max-width: 1200px; 
+  margin: 0 auto;    
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;   
+  padding: 0 20px 30px 20px;
+  gap: 30px;
+}
+
+/* Estilos de cada columna */
+.footer-columna {
+  flex: 1;
+  min-width: 220px; 
+}
+
+.footer-columna h3, 
+.footer-columna h4 {
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.footer-columna p {
+  color: #aaaaaa; 
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Listas de enlaces */
+.footer-columna ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-columna ul li {
+  margin-bottom: 8px;
+}
+
+.footer-columna ul li a,
+.redes-sociales a {
+  color: #aaaaaa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-columna ul li a:hover,
+.redes-sociales a:hover {
+  color: #ffffff; 
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 15px;
+}
+
+/* Barra inferior de copyright */
+.footer-bottom {
+  border-top: 1px solid #222222; 
+  text-align: center;
+  padding: 20px 0;
+  color: #777777;
+  font-size: 0.85rem;
+}
