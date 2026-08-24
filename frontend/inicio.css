@@ -5,12 +5,29 @@ body {
 }
 
 .navbar {
+  position: relative;
   display: flex;
   justify-content: flex-end; /* Alinea los elementos a la derecha */
   align-items: center;       /* Centra los botones verticalmente para que queden alineados */
   gap: 15px;                 /* Espacio base de separación entre los botones */
-  padding: 15px 20px;
+  padding: 15px 15px;
 } 
+
+.botonCasa {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); /* Lo centra verticalmente dentro del div */
+  background: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+}
 
 /* Estilos compartidos para los botones transparentes */
 .carritoButton, .productosButton, .panelButton {
@@ -50,11 +67,11 @@ body {
 
 .banner-principal {
   width: 100%; /* Cambiado de 100vw a 100% para evitar scroll horizontal */
-  height: 400px;
-  margin-top: 20px; /* Espacio separador respecto al Navbar */
+  height: 600px;
+  margin-top: 10px; /* Espacio separador respecto al Navbar */
   margin-bottom: 0;  /* Elimina cualquier espacio inferior para que pegue con el footer */
   
-  background-image: url('/assets/images/fondocentral.avif');
+  background-image: url('../frontend/assets/images/fondocentral.avif');
   background-size: cover;
   background-position: center;
   
