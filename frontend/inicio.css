@@ -1,3 +1,4 @@
+/********************** NAVBAR ******************/
 body {
   margin: 0;
   padding: 0;
@@ -25,7 +26,7 @@ body {
   border: none;
   padding: 15px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -35,6 +36,7 @@ body {
   border: none;
   cursor: pointer;
   padding: 5px 10px;
+  font-size: 16px;
 }
 
 /* Espacio diferenciador: separamos un poco más el panel */
@@ -47,10 +49,12 @@ body {
   color: white;
   border: none;
   border-radius: 16px; 
-  width: 80px;
-  height: 32px;
+  width: 120px;
+  height: 40px;
   margin-left: 10px; 
+  cursor: pointer;
 }
+/************************************************/
 
 .parrafoInicio {
   background-color: aliceblue;

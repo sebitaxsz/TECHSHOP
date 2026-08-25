@@ -1,0 +1,218 @@
+/********************** NAVBAR ******************/
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: flex-end; /* Alinea los elementos a la derecha */
+  align-items: center;       /* Centra los botones verticalmente para que queden alineados */
+  gap: 15px;                 /* Espacio base de separación entre los botones */
+  padding: 15px 15px;
+} 
+
+.botonCasa {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); /* Lo centra verticalmente dentro del div */
+  background: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Estilos compartidos para los botones transparentes */
+.carritoButton, .productosButton, .panelButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+/* Espacio diferenciador: separamos un poco más el panel */
+.panelButton {
+  margin-left: 15px; 
+}
+
+.iniciarButton {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 16px; 
+  width: 120px;
+  height: 40px;
+  margin-left: 10px; 
+  cursor: pointer;
+}
+/************************************************/
+
+/******************** BODY **********************/
+.catalogo-container {
+    max-width: 1200px; /* Limita el ancho total */
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.catalogo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.catalogo-header h1 {
+    font-size: 1.875rem; /* 30px */
+    font-weight: 700;
+}
+
+.catalogo-acciones {
+    display: flex;
+    gap: 15px;
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-box input {
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    width: 300px;
+    background-color: #f3f4f6;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b7280;
+}
+
+.btn-filtrar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.filter-icon {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.resultados-info {
+    text-align: right;
+    color: #6b7280;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+/* --- ESTILOS DEL GRID DE PRODUCTOS --- */
+.productos-grid {
+    display: grid;
+    /* Configura 4 columnas iguales, ajustables automáticamente */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px; /* Espacio entre tarjetas */
+}
+
+/* --- ESTILO DE LA TARJETA INDIVIDUAL --- */
+.producto-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb; /* Borde sutil */
+    border-radius: 12px; /* Esquinas redondeadas modernas */
+    overflow: hidden; /* Asegura que nada se salga de las esquinas */
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05); /* Sombra suave al pasar el mouse */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+.card-imagen-placeholder {
+    width: 100%;
+    height: 200px; /* Altura fija para la imagen */
+    background-color: #f3f4f6; /* Fondo gris mientras carga la imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.card-imagen-placeholder img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain; /* Ajusta la imagen sin deformarla */
+}
+
+.card-contenido {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espaciado entre textos */
+    flex-grow: 1; /* Empuja el botón hacia abajo */
+}
+
+.producto-nombre {
+    font-size: 1.125rem; /* 18px */
+    font-weight: 600;
+    color: #111827;
+}
+
+.producto-descripcion {
+    font-size: 0.875rem; /* 14px */
+    color: #6b7280; /* Gris más claro para el texto secundario */
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.producto-stock, .producto-precio {
+    font-weight: 600;
+}
+.producto-stock {
+    font-size: 0.85rem;
+    color: #059669; /* Un color verde para el stock */
+}
+
+.producto-precio {
+    font-size: 1.25rem; /* 20px, resalta el precio */
+    color: #111827;
+    margin-top: auto; /* Empuja el precio justo antes del botón */
+}
+
+/* --- ESTILO DEL BOTÓN --- */
+.btn-comprar {
+    margin-top: 15px;
+    width: 100%;
+    padding: 12px;
+    background-color: #111827; /* Fondo negro del botón */
+    color: #ffffff; /* Texto blanco */
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-comprar:hover {
+    background-color: #374151; /* Gris más claro al pasar el mouse */
+}
+/************************************************/

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="/frontend/css/productos.css">
+</head>
+<body>
+    <!------------------------------- NAVBAR -------------------------->
+    <div class="navbar">
+        <a href="/frontend/inicio.html"><button class="botonCasa">TechShop</button></a>
+        <a href="/frontend/html/admin-productos.html"><button class="panelButton">Panel Admin</button></a>
+        <a href="/frontend/html/productos.html"><button class="productosButton">Productos</button></a>
+        <a href="/frontend/html/carrito.html"><button class="carritoButton">Carrito</button></a>
+        <a href="/frontend/html/iniciarSesion.html"><button class="iniciarButton">Iniciar Sesion</button></a>    
+    </div>        
+    <!-----------------------------------------------------------------> 
+
+    <!-------------------------------- BODY --------------------------->
+
+    <main class="catalogo-container">
+
+        <!-- Sección de Título y Filtro (similar a tu imagen) -->
+        <header class="catalogo-header">
+            <h1>Catálogo de Productos</h1>
+            <div class="catalogo-acciones">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="search" placeholder="Buscar productos de tecnología...">
+                </div>
+                <button class="btn-filtrar">
+                    <span class="filter-icon">▼</span> Filtrar
+                </button>
+            </div>
+        </header>
+        
+        <!-- Texto de resultados (opcional, para rellenar) -->
+        <p class="resultados-info">Mostrando 12 resultados</p>
+
+        <!-- ESTA ES LA CLAVE: CONTENEDOR DEL GRID DE TARJETAS -->
+        <!-- Aquí es donde JS insertará todas las tarjetas -->
+        <section class="productos-grid" id="productos-contenedor">
+            
+            <!-- PLANTILLA DE TARJETA (Este bloque se repetirá con JS) -->
+            <!-- Usamos clases semánticas y bicolores para el texto -->
+            <article class="producto-card">
+                <div class="card-imagen-placeholder">
+                    <!-- Aquí irá la etiqueta <img src=""> de la API -->
+                    <img src="https://via.placeholder.com/300x200.png?text=Imagen+Producto" alt="Imagen del producto">
+                </div>
+                <div class="card-contenido">
+                    <h3 class="producto-nombre"><!-- NOMBRE DE LA API -->ProBook X15 Laptop</h3>
+                    <p class="producto-descripcion"><!-- DESCRIPCIÓN DE LA API -->15.6", Intel Core i7, 16GB RAM, 512GB SSD...</p>
+                    <!-- He añadido el precio (asumiendo que la API lo trae) -->
+                    <p class="producto-stock"><!-- STOCK DE LA API -->Stock: 15 unidades</p> 
+                    <p class="producto-precio"><!-- PRECIO DE LA API -->$1,299</p>
+                    <button class="btn-comprar">Comprar</button>
+                </div>
+            </article>
+            <!-- FIN DE PLANTILLA -->
+        </section>
+
+    </main>
+    <!----------------------------------------------------------------->
+</body>
+</html>

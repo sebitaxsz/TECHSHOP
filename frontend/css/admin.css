@@ -1,0 +1,252 @@
+/********************** NAVBAR ******************/
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: flex-end; /* Alinea los elementos a la derecha */
+  align-items: center;       /* Centra los botones verticalmente para que queden alineados */
+  gap: 15px;                 /* Espacio base de separación entre los botones */
+  padding: 15px 15px;
+} 
+
+.botonCasa {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); /* Lo centra verticalmente dentro del div */
+  background: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Estilos compartidos para los botones transparentes */
+.carritoButton, .productosButton, .panelButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+/* Espacio diferenciador: separamos un poco más el panel */
+.panelButton {
+  margin-left: 15px; 
+}
+
+.iniciarButton {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 16px; 
+  width: 120px;
+  height: 40px;
+  margin-left: 10px; 
+  cursor: pointer;
+}
+/************************************************/
+
+/*************************************************** USUARIOS PRODUCTOS ******************************************/
+/* --- LAYOUT DEL PANEL DE ADMINISTRACIÓN (Sidebar + Contenido) --- */
+.admin-layout {
+    display: flex;
+    min-height: calc(100vh - 70px); /* Ocupa toda la pantalla debajo del navbar */
+    background-color: #f9fafb;
+}
+
+/* --- BARRA LATERAL (SIDEBAR) --- */
+.admin-sidebar {
+    width: 250px;
+    background-color: #ffffff;
+    border-right: 1px solid #e5e7eb;
+    padding: 20px 0;
+}
+
+.sidebar-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.sidebar-link {
+    display: block;
+    padding: 12px 20px;
+    color: #4b5563;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.sidebar-link:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+/* Estilo para la pestaña activa en el sidebar */
+.sidebar-link.active {
+    background-color: #f3f4f6;
+    color: #111827;
+    font-weight: 600;
+    border-left: 4px solid #111827; /* Indicador visual izquierdo */
+}
+
+/* --- CONTENIDO PRINCIPAL DEL ADMIN --- */
+.admin-content {
+    flex-grow: 1;
+    padding: 30px;
+    max-width: 1100px;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.content-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.subtitulo-conteo {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+/* Botón primario (Agregar Producto / Usuario) */
+.btn-primary {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #374151;
+}
+
+/* --- ESTILOS DE LA TABLA CRUD (Recuadro con borde morado/gris de tus imágenes) --- */
+.table-container {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.crud-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.crud-table th {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6b7280;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.crud-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: middle;
+    font-size: 0.9rem;
+    color: #111827;
+}
+
+.crud-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Elementos internos de las tablas */
+.table-img, .user-avatar {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background-color: #f9fafb;
+}
+
+.user-avatar {
+    border-radius: 50%; /* Avatar redondo para los usuarios */
+}
+
+.item-title {
+    display: block;
+    font-weight: 600;
+    color: #111827;
+}
+
+.item-desc {
+    display: block;
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+/* Badges y etiquetas secundarias */
+.badge, .badge-role {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.stock-indicator, .status-active {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #059669; /* Verde */
+}
+
+.btn-edit {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: #374151;
+    transition: background-color 0.2s;
+}
+
+.btn-edit:hover {
+    background-color: #f3f4f6;
+}
+
+/* --- PAGINACIÓN --- */
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #6b7280;
+    padding: 0 5px;
+}
+/****************************************************************************************************************/

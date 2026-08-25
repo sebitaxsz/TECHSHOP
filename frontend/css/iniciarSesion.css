@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*********************** BOTON CASA ******************/
+.botonInicio {
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 15px;
+  margin-top: 15px;
+  border-radius: 10px; 
+  width: 140pxx;
+  height: 45px;
+  margin-left: 10px; 
+  cursor: pointer;
+}
+/*****************************************************/
+
+/*********************** TITULO **********************/
+.titulo {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*****************************************************/
+
+/******************** FORMULARIO *********************/
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 40px;
+
+    /****** FONDO *****/
+    background-color: #f8fafc;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    /******************/
+}
+
+section input {
+    padding: 5px 5px;
+    font-size: 1rem;
+    border: 1.5px solid #d1d5db;
+    border-radius: 7px;
+    outline: none;
+    background-color: #f9fafb;
+}
+
+section input:focus {
+    border-color: #3b82f6;
+    background-color: #ffffff;
+    box-shadow:  0 0 0 3px rgba(59, 130, 256, 0.15 );
+}
+
+section button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: black;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+section button:active {
+    transform: scale(0.98);
+}
+
+/*****************************************************/

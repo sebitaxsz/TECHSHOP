@@ -1,0 +1,249 @@
+/********************** NAVBAR ******************/
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: flex-end; /* Alinea los elementos a la derecha */
+  align-items: center;       /* Centra los botones verticalmente para que queden alineados */
+  gap: 15px;                 /* Espacio base de separación entre los botones */
+  padding: 15px 15px;
+} 
+
+.botonCasa {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); /* Lo centra verticalmente dentro del div */
+  background: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Estilos compartidos para los botones transparentes */
+.carritoButton, .productosButton, .panelButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+/* Espacio diferenciador: separamos un poco más el panel */
+.panelButton {
+  margin-left: 15px; 
+}
+
+.iniciarButton {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 16px; 
+  width: 120px;
+  height: 40px;
+  margin-left: 10px; 
+  cursor: pointer;
+}
+/************************************************/
+
+/******************** CARRITO *******************/
+.carrito-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.carrito-container > h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* --- LAYOUT DE 2 COLUMNAS --- */
+.carrito-layout {
+    display: grid;
+    grid-template-columns: 1fr 360px; /* Izquierda flexible, Derecha fija de 360px */
+    gap: 30px;
+    align-items: start;
+}
+
+@media (max-width: 850px) {
+    .carrito-layout {
+        grid-template-columns: 1fr; /* Se vuelve una sola columna en pantallas pequeñas */
+    }
+}
+
+/* --- CAJA CONTENEDORA IZQUIERDA (Simulando el marco grande de la imagen) --- */
+.carrito-productos {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+/* --- FILA DE CADA PRODUCTO --- */
+.carrito-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f3f4f6;
+    gap: 15px;
+}
+
+/* Ocultar borde en el último elemento (opcional con JS o CSS :last-child) */
+.carrito-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.item-img {
+    width: 70px;
+    height: 50px;
+    object-fit: contain;
+    background-color: #f9fafb;
+    border-radius: 6px;
+    padding: 4px;
+    border: 1px solid #e5e7eb;
+}
+
+.item-detalles {
+    flex-grow: 1;
+}
+
+.item-nombre {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Controles de Cantidad (+ -) */
+.item-cantidad {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #f9fafb;
+}
+
+.btn-qty {
+    background: transparent;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #4b5563;
+    transition: background 0.2s;
+}
+
+.btn-qty:hover {
+    background-color: #e5e7eb;
+}
+
+.item-cantidad input {
+    width: 35px;
+    text-align: center;
+    border: none;
+    background: transparent;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111827;
+    outline: none;
+}
+
+.item-precio {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #111827;
+    min-width: 70px;
+    text-align: right;
+}
+
+/* Botón de eliminar (basurita) */
+.btn-eliminar {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 5px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.btn-eliminar:hover {
+    opacity: 1;
+}
+
+
+/* --- ASIDE: RESUMEN DEL PEDIDO (Tarjeta Derecha) --- */
+.carrito-resumen {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.carrito-resumen h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 5px;
+}
+
+.resumen-fila {
+    display: flex;
+    justify-content: space-between;
+    color: #4b5563;
+    font-size: 0.95rem;
+}
+
+.resumen-fila.total {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 5px;
+}
+
+.resumen-divider {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 5px 0;
+}
+
+/* Botón Proceder al Pago */
+.btn-pagar {
+    margin-top: 10px;
+    width: 100%;
+    padding: 12px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-pagar:hover {
+    background-color: #1f2937;
+}
+/***********************************************/

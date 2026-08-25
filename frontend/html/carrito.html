@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="../css/carrito.css">
+</head>
+<body>
+    <!------------------------------- NAVBAR -------------------------->
+    <div class="navbar">
+        <a href="/frontend/inicio.html"><button class="botonCasa">TechShop</button></a>
+        <a href="/frontend/html/admin-productos.html"><button class="panelButton">Panel Admin</button></a>
+        <a href="/frontend/html/productos.html"><button class="productosButton">Productos</button></a>
+        <a href="/frontend/html/carrito.html"><button class="carritoButton">Carrito</button></a>
+        <a href="/frontend/html/iniciarSesion.html"><button class="iniciarButton">Iniciar Sesion</button></a>    
+    </div>        
+    <!----------------------------------------------------------------->  
+
+    <!------------------------------- BODY ---------------------------->
+<main class="carrito-container">
+        <h1>Carrito de Compras</h1>
+
+        <!-- Contenedor en Grid de 2 columnas (Lista izquierda, Resumen derecha) -->
+        <div class="carrito-layout">
+
+            <!-- COLUMNA IZQUIERDA: Lista de productos (Aquí inyectarás los productos con JS) -->
+            <section class="carrito-productos" id="carrito-items-contenedor">
+                
+                <!-- PLANTILLA DE PRODUCTO EN EL CARRITO -->
+                <article class="carrito-item">
+                    <img src="https://via.placeholder.com/80x60.png?text=Laptop" alt="ProBook X15 Laptop" class="item-img">
+                    
+                    <div class="item-detalles">
+                        <h3 class="item-nombre">ProBook X15 Laptop</h3>
+                    </div>
+
+                    <!-- Controles de cantidad (-) (número) (+) -->
+                    <div class="item-cantidad">
+                        <button class="btn-qty">-</button>
+                        <input type="text" value="1" readonly>
+                        <button class="btn-qty">+</button>
+                    </div>
+
+                    <span class="item-precio">$1,299</span>
+
+                    <!-- Botón eliminar (ícono de basurita) -->
+                    <button class="btn-eliminar" title="Eliminar producto">🗑️</button>
+                </article>
+                <!-- FIN DE PLANTILLA DE PRODUCTO -->
+
+                <!-- Puedes duplicar <article class="carrito-item"> para simular más elementos -->
+
+            </section>
+
+            <!-- COLUMNA DERECHA: Resumen del Pedido -->
+            <aside class="carrito-resumen">
+                <h2>Resumen del Pedido</h2>
+                
+                <div class="resumen-fila">
+                    <span>Subtotal</span>
+                    <span id="subtotal-monto">$3,596</span>
+                </div>
+                
+                <div class="resumen-fila">
+                    <span>Envío</span>
+                    <span id="envio-monto">$15</span>
+                </div>
+                
+                <hr class="resumen-divider">
+                
+                <div class="resumen-fila total">
+                    <span>Total</span>
+                    <span id="total-monto">$3,611</span>
+                </div>
+
+                <button class="btn-pagar">Proceder al Pago</button>
+            </aside>
+
+        </div>
+    </main>
+    <!----------------------------------------------------------------->
+    
+</body>
+</html>
