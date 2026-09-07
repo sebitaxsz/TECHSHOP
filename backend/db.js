@@ -1,22 +1,26 @@
-const mysql = require('mysql2');
-require('dotenv').config();
+import mysql from 'mysql2/promise';
+import dotenv from 'dotenv';
 
-// Creamos la conexion usando los datos del archivo .env
-const conexion = mysql.createConnection({
+dotenv.config();
+
+// Creamos un pool de conexiones que optimiza las APIs
+const db = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    database: process.env.DB_NAME,
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 });
 
-// Probar la conexion 
-conexion.connect((error) => {
-    if (error) {
-        console.log("Error al conectar a la base de datos:", error);
-        return;
-    } else {
-        console.log("Conectado exitosamente a la base de datos techshop_db");
-    }
-});
+// Verificamos la conexion con la base de datos
+try {
+    const connection = await db.getConnection();
+    console.log("Conectado exitosamente con la base de datos de TechShop");
+    connection.release();
+} catch {
+    console.log("Error al intentar conectar con la base de datos", error);
+}
 
-module.exports = conexion;
+export default db;

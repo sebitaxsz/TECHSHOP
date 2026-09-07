@@ -1,24 +1,26 @@
-const express = require('express');
-const cors = require('cors');
-require('dotenv').config();
+import express from 'express';
+import cors from 'cors';
+import dotenv from 'dotenv'; 
+import authRoutes from './routes/auth.routes.js'; // Rutas para autenticacion
+import userRoutes from './routes/user.routes.js'; // Rutas para panel administrador usuarios
 
-// Importamos la conexion a la base de datos
-const db = require('./db');
 
-const app = express();
+dotenv.config();
 
-// Middlewares
-app.use(cors())
-app.use(express.json()) // Permite recibir y enviar datos en formato JSON
+const app =  express();
 
-// Ruta de pruebas para verificar respuesta por parte del servidor
-app.get('/', (req, res) => {
-    res.send('API de techshop funcionando correctamente');
-});
+//--- Middlewares ---//
+app.use(cors());
+app.use(express.json());
+//-------------------//
 
-// Configuramos el servidor al puerto 3000
+//------- Rutas ------//
+app.use('/', authRoutes);
+app.use('/', userRoutes);
+//-------------------//
+
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () =>{
+app.listen(PORT, ()=>{
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
-}); 
+});
 
