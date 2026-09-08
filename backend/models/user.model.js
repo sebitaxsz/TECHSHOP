@@ -1,4 +1,3 @@
-import { updateUser } from '../controllers/user.controller.js';
 import db from '../db.js' // Importamos la base de datos
 
 export const UserModel = {
@@ -13,7 +12,7 @@ export const UserModel = {
         const [result] = await db.query(
             'SELECT * FROM usuarios'
         );
-        return result //
+        return result 
     },
     //--------------------------------------------------------------------------------------------------//
 
