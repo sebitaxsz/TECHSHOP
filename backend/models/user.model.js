@@ -1,13 +1,16 @@
 import db from '../db.js' // Importamos la base de datos
 
 export const UserModel = {
+
+    //--------------------------------------- VALIDACION PARA LOGIN ------------------------------------//
     // Buscamos si el correo existe en la base de datos
     async findByEmail(correo){
         const [rows] = await db.query('SELECT * FROM usuarios WHERE correo = ?', [correo]);
         return rows[0]; // Retorna el usuario en caso de que exista o undefined si no
     },
+    //--------------------------------------------------------------------------------------------------//
 
-    //--------------------------------------- OBTENER USUARIOS ------------------------------------------//
+    //--------------------------------------- OBTENER USUARIOS -----------------------------------------//
     async getUsers() {
         const [result] = await db.query(
             'SELECT * FROM usuarios'
@@ -26,7 +29,6 @@ export const UserModel = {
     //--------------------------------------------------------------------------------------------------//
 
     //---------------------------------------- CREAR USUARIO -------------------------------------------//
-
     async createUser(nombre, apellido, correo, hashedPassword, rol_id) {
         const [result] = await db.query(
             'INSERT INTO usuarios (nombre, apellido, correo, password, rol_id) VALUES (?, ?, ?, ?, ?)',
@@ -34,11 +36,9 @@ export const UserModel = {
         );
         return result.insertId; // Retorna el ID generado del nuevo registro
     },
-
     //--------------------------------------------------------------------------------------------------//
 
     //------------------------------------ CREAR USUARIO CON ROL ---------------------------------------//
-
     async createUserWithRole(nombre, apellido, correo, hashedPassword, rol_id) {
         const [result] = await db.query(
             'INSERT INTO usuarios (nombre, apellido, correo, password, rol_id) VALUES (?, ?, ?, ?, ?)',
@@ -46,7 +46,6 @@ export const UserModel = {
         );
         return result.insertId;
     },
-
     //--------------------------------------------------------------------------------------------------//
 
     //----------------------------------------- ACTUALIZAR USUARIO -------------------------------------//
