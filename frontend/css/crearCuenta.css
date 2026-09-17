@@ -29,7 +29,7 @@ body {
 /*****************************************************/
 
 /******************** FORMULARIO *********************/
-section {
+form {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -44,7 +44,7 @@ section {
     /******************/
 }
 
-section input {
+form input {
     padding: 5px 5px;
     font-size: 1rem;
     border: 1.5px solid #d1d5db;
@@ -53,13 +53,13 @@ section input {
     background-color: #f9fafb;
 }
 
-section input:focus {
+form input:focus {
     border-color: #3b82f6;
     background-color: #ffffff;
     box-shadow:  0 0 0 3px rgba(59, 130, 256, 0.15 );
 }
 
-section button {
+form button {
     padding: 12px 20px;
     font-size: 1rem;
     font-weight: bold;
@@ -71,7 +71,7 @@ section button {
     transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-section button:active {
+form button:active {
     transform: scale(0.98);
 }
 

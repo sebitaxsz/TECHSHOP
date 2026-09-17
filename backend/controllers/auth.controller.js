@@ -65,6 +65,13 @@ export const registerUser = async (req, res) => {
                 error: 'Las contraseñas no coinciden'
             });
         }
+        
+        // Validamos que los campos esten todos llenos
+        if (!nombre || !apellido || !correo || !contraseña || !repetirContraseña ) {
+            return res.status(400).json({
+                message: 'Todos los campos deben estar llenos'
+            });
+        }
 
         // Validamos si el correo ya esta registrado
         const existingUser = await UserModel.findByEmail(correo);

@@ -12,16 +12,17 @@
     <!------------------------------------------------------>
 
     <!--------------------- FORMULARIO --------------------->
-    <section>
+    <form id="loginForm">
     <!------------------------ TITULO ---------------------->
     <H1 class="titulo">Iniciar Sesion</H1>
     <!------------------------------------------------------>
-        <input type="text" name="correo" id="correo" placeholder="Ingrese su correo">
-        <input type="text" name="contraseña" id="contraseña" placeholder="Ingrese su contraseña">
+        <input type="email" name="correo" id="correo" placeholder="Ingrese su correo">
+        <input type="password" name="contraseña" id="contraseña" placeholder="Ingrese su contraseña">
         <p>Al continuar acepto que estoy de acuerdo con los <a href="https://phylo.co/blog/que-son-los-terminos-y-condiciones">Terminos y Condiciones</a></p>
-        <button>Iniciar Sesion</button>
+        <button type="submit">Iniciar Sesion</button>
         <p>¿No tienes cuenta? <a href="/frontend/html/crearCuenta.html">Crear Cuenta</a></p>        
-    </section>
+    </form>
     <!------------------------------------------------------>
+    <script src="../js/login.js"></script> <!-- LOGICA -->
 </body>
 </html>

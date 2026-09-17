@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { verifyAdmin } from "../middlewares/auth.middleware.js";
 import { getProductById, getProducts, createProduct, updateProduct, deleteProduct} from "../controllers/product.controller.js";
+import upload from '../middlewares/upload.js';
 
 const router = Router();
 
@@ -10,7 +11,7 @@ router.get('/getProductById/:id', getProductById); // Ver un producto especifico
 //---------------------------//
 
 //---------- POST -----------//
-router.post('/createProduct', verifyAdmin, createProduct); // Crear producto (solo administradores)
+router.post('/createProduct', verifyAdmin, upload.single('imagen'), createProduct); // Crear producto (solo administradores)
 //---------------------------//
 
 //---------- PUT ------------//

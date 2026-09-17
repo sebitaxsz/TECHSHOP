@@ -1,10 +1,19 @@
 import { ProductModel } from "../models/product.model.js";
 
+
 //------------------------------- OBTENER TODOS LOS PRODUCTOS  --------------------------//
 export const getProducts = async (req, res) => {
     try {
         const products = await ProductModel.getProducts();
-        return res.status(200).json(products);
+
+        // Este map agrega la URL completa de la imagen a cada producto
+        const productsWithImage = products.map(product => ({
+            ...product,
+            imagen: product.imagen
+            ? `${req.protocol}://${req.get('host')}/uploads/${product.imagen}`: null
+        }));
+
+        return res.status(200).json(productsWithImage);
     } catch (error) {
         console.error(error);
         return res.status(500).json({
@@ -28,8 +37,15 @@ export const getProductById = async (req, res) => {
             });
         }
 
+        // Este map agrega la URL completa de la imagen a cada producto
+        const productsWithImage = products.map(product => ({
+            ...product,
+            imagen: product.imagen
+            ? `${req.protocol}://${req.get('host')}/uploads/${product.imagen}`: null
+        }));
+
         // En caso de que el producto exista mostramos sus datos
-        return res.status(200).json(product);
+        return res.status(200).json(productsWithImage);
 
 
     } catch (error) {
@@ -45,8 +61,13 @@ export const getProductById = async (req, res) => {
 export const createProduct = async (req, res) => {
 try {
     // Capturamos los datos enviados por el body/formulario
-    const {nombre, descripcion, precio, stock, imagen } = req.body;
-    
+    const {nombre, descripcion, precio, stock } = req.body;
+
+    // Guardamos la imagen enviada
+    // Guardamos solo el nombre del archivo en la variable imagen, si no se subio nada sera null
+    const imagen = req.file ? req.file.filename : null;
+    const papoi = req.fila ? req.file.file : null;
+
     // Validamos los campos minimos necesarios para crear un producto
     if (!nombre || !descripcion || !precio || !stock || !imagen ) {
         return res.status(400).json({
@@ -59,7 +80,8 @@ try {
     // Si todo esta bien creamos el producto
     return res.status(200).json({
         message: 'Producto creado exitosamente'
-    })    
+    });
+
 } catch (error) {
     console.error(error);
     return res.status(500).json({

@@ -19,6 +19,7 @@ app.use(express.json());
 app.use('/', authRoutes);
 app.use('/', userRoutes);
 app.use('/', productRoutes);
+app.use('/uploads', express.static('uploads')); // Esta es la ruta unica para la carga de imagenes 
 //-------------------//
 
 const PORT = process.env.PORT || 3000;
