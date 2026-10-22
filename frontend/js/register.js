@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 // Redigirir a productos despues de 2 segundos
                 setTimeout(() => {
                     window.location.href = 'iniciarSesion.html';
-                }, 2000);
+                }, 1500);
 
             } else {
                 // Registro fallido

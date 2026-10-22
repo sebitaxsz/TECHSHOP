@@ -71,10 +71,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Mostrar un mensaje de exito
                 alert('Login exitoso');
 
-                // Redigirir a productos despues de 2 segundos
+                // Redigirir a productos despues de 1 segundos
                 setTimeout(() => {
-                    window.location.href = 'productos.html';
-                }, 2000);
+                    window.location.href = '../inicio.html';
+                }, 1000);
             } else {
                 // Login fallido
                 console.log('Login fallido');

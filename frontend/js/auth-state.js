@@ -30,7 +30,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Sesión cerrada. Token eliminado.');
                 
                 // Recargamos la página para que los botones vuelvan a decir "Iniciar sesión"
-                window.location.reload(); 
+                // window.location.reload(); 
+
+                // Redigirir a inicio despues de 2 segundos
+                setTimeout(() => {
+                    window.location.href = '../inicio.html';
+                }, 2000);
+                
             });
 
         } else {

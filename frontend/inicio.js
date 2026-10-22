@@ -7,4 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (boton) {
         boton.addEventListener("click", botonCatalogo)
     }
+
+    
+
+
+
+
 })
